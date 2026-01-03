@@ -1,7 +1,8 @@
 
+
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Compass, Map, User, LogOut } from 'lucide-react';
+import { Compass, Map, User, LogOut, Search, Globe, Calendar } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Layout = () => {
@@ -30,6 +31,15 @@ const Layout = () => {
                                 <NavLink to="/my-trips" active={isActive('/my-trips')} icon={<Map size={18} />}>
                                     My Trips
                                 </NavLink>
+                                <NavLink to="/search" active={isActive('/search')} icon={<Search size={18} />}>
+                                    Search
+                                </NavLink>
+                                <NavLink to="/community" active={isActive('/community')} icon={<Globe size={18} />}>
+                                    Community
+                                </NavLink>
+                                <NavLink to="/calendar" active={isActive('/calendar')} icon={<Calendar size={18} />}>
+                                    Calendar
+                                </NavLink>
                             </div>
                         </div>
                         <div className="flex items-center gap-4">
@@ -38,11 +48,13 @@ const Layout = () => {
                                     <span className="text-sm font-medium text-gray-700 hidden md:block">
                                         Hi, {user.name}
                                     </span>
-                                    <img
-                                        src={user.avatar || `https://ui-avatars.com/api/?name=${user.name}&background=F59E0B&color=fff`}
-                                        alt="Profile"
-                                        className="h-8 w-8 rounded-full border border-gray-200"
-                                    />
+                                    <Link to="/profile">
+                                        <img
+                                            src={user.avatar || `https://ui-avatars.com/api/?name=${user.name}&background=3B82F6&color=fff`}
+                                            alt="Profile"
+                                            className="h-8 w-8 rounded-full border border-gray-200 hover:ring-2 hover:ring-brand-primary transition-all cursor-pointer"
+                                        />
+                                    </Link>
                                     <button
                                         onClick={logout}
                                         className="p-2 text-gray-400 hover:text-red-600 transition-colors"
@@ -76,8 +88,8 @@ const NavLink = ({ to, children, active, icon }) => (
     <Link
         to={to}
         className={`inline-flex items-center gap-2 px-1 pt-1 border-b-2 text-sm font-medium transition-colors ${active
-                ? 'border-brand-primary text-gray-900'
-                : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+            ? 'border-brand-primary text-gray-900'
+            : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
             }`}
     >
         {icon}

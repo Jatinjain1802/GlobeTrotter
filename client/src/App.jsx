@@ -1,4 +1,5 @@
 
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Layout from './layouts/Layout';
@@ -14,6 +15,10 @@ import Dashboard from './pages/Dashboard.jsx'; // Ensure .jsx extension
 import PublicTrip from './pages/PublicTrip';
 import MyTrips from './pages/MyTrips.jsx';
 import TripBuilder from './pages/TripBuilder.jsx';
+import UserProfile from './pages/UserProfile.jsx';
+import Search from './pages/Search.jsx';
+import CommunityFeed from './pages/CommunityFeed.jsx';
+import CalendarView from './pages/CalendarView.jsx';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -69,6 +74,38 @@ function App() {
             <Route path="/trip/:tripId/budget" element={<TripBudget />} />
             <Route path="/trip/:tripId/view" element={<ItineraryView />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <UserProfile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/search"
+              element={
+                <ProtectedRoute>
+                  <Search />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/community"
+              element={
+                <ProtectedRoute>
+                  <CommunityFeed />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/calendar"
+              element={
+                <ProtectedRoute>
+                  <CalendarView />
+                </ProtectedRoute>
+              }
+            />
           </Route>
         </Routes>
       </Router>

@@ -3,16 +3,16 @@
 @theme {
   --font-sans: "Inter", "sans-serif";
 
-  --color-brand-primary: #F59E0B;
-  /* Warm Amber/Yellow */
-  --color-brand-secondary: #D97706;
-  /* Darker Orange */
+  --color-brand-primary: #3B82F6;
+  /* Blue 500 */
+  --color-brand-secondary: #2563EB;
+  /* Blue 600 */
   --color-brand-dark: #1F2937;
   /* Charcoal */
   --color-brand-light: #F9FAFB;
   /* Off-white */
-  --color-brand-accent: #FFFBEB;
-  /* Light Yellow bg */
+  --color-brand-accent: #EFF6FF;
+  /* Light Blue bg */
 }
 
 :root {
