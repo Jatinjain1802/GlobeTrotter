@@ -3,6 +3,7 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Compass, Map, User, LogOut, Search, Globe, Calendar } from 'lucide-react';
+import logo from '../assets/logo.png';
 import { useAuth } from '../context/AuthContext';
 
 const Layout = () => {
@@ -19,9 +20,7 @@ const Layout = () => {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <Link to="/dashboard" className="flex-shrink-0 flex items-center gap-2">
-                                <div className="bg-brand-primary p-1.5 rounded-lg">
-                                    <Compass className="text-white" size={24} />
-                                </div>
+                                <img src={logo} alt="GlobeTrotter Logo" className="h-10 w-10 object-contain" />
                                 <span className="text-xl font-bold text-gray-900 tracking-tight">GlobeTrotter</span>
                             </Link>
                             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -77,7 +76,7 @@ const Layout = () => {
             {/* Footer */}
             <footer className="bg-white border-t border-gray-200 mt-auto">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <p className="text-center text-sm text-gray-500">© 2024 GlobeTrotter. All rights reserved.</p>
+                    <p className="text-center text-sm text-gray-500">© 2026 GlobeTrotter. All rights reserved.</p>
                 </div>
             </footer>
         </div>

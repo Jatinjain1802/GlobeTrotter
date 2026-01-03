@@ -36,7 +36,7 @@ const TripCard = ({ trip }) => {
                         <div className="flex items-center text-sm text-gray-500">
                             <Calendar className="w-4 h-4 mr-2 text-brand-primary" />
                             <span>
-                                {trip.start_date ? new Date(trip.start_date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'Date TBD'}
+                                {trip.start_date && trip.start_date !== 'null' ? new Date(trip.start_date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'Date TBD'}
                             </span>
                             {/* logic for end date if you want range */}
                         </div>

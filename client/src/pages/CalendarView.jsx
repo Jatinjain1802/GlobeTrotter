@@ -3,6 +3,11 @@ import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, MapPin } from 'luc
 import { Link } from 'react-router-dom';
 import api from '../services/api';
 import dayjs from 'dayjs';
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';
+
+dayjs.extend(isSameOrAfter);
+dayjs.extend(isSameOrBefore);
 
 const CalendarView = () => {
     const [currentDate, setCurrentDate] = useState(dayjs());
@@ -121,8 +126,8 @@ const CalendarView = () => {
                                         <div
                                             key={dayIdx}
                                             className={`min-h-24 p-2 rounded-xl border transition-all ${isCurrentMonth
-                                                    ? 'bg-white border-gray-200 hover:border-brand-primary hover:shadow-sm'
-                                                    : 'bg-gray-50 border-gray-100'
+                                                ? 'bg-white border-gray-200 hover:border-brand-primary hover:shadow-sm'
+                                                : 'bg-gray-50 border-gray-100'
                                                 } ${isToday ? 'ring-2 ring-brand-primary' : ''}`}
                                         >
                                             <div className={`text-sm font-bold mb-1 ${isCurrentMonth ? 'text-gray-900' : 'text-gray-400'

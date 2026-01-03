@@ -19,6 +19,7 @@ import UserProfile from './pages/UserProfile.jsx';
 import Search from './pages/Search.jsx';
 import CommunityFeed from './pages/CommunityFeed.jsx';
 import CalendarView from './pages/CalendarView.jsx';
+import Settings from './pages/Settings.jsx';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -103,6 +104,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <CalendarView />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <Settings />
                 </ProtectedRoute>
               }
             />

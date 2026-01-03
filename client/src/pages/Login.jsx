@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Mail, Lock, Globe, ArrowRight } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -39,9 +40,7 @@ const Login = () => {
                 <div className="relative z-10 flex flex-col justify-center px-16 text-white">
                     <div className="mb-8">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="bg-white p-3 rounded-2xl shadow-2xl">
-                                <Globe className="text-brand-primary" size={40} />
-                            </div>
+                            <img src={logo} alt="GlobeTrotter Logo" className="h-20 w-20 object-contain drop-shadow-2xl" />
                             <h1 className="text-4xl font-bold">GlobeTrotter</h1>
                         </div>
                         <h2 className="text-5xl font-extrabold leading-tight mb-6">
@@ -87,9 +86,7 @@ const Login = () => {
                 <div className="w-full max-w-md">
                     {/* Mobile Logo */}
                     <div className="lg:hidden flex items-center justify-center gap-3 mb-8">
-                        <div className="bg-brand-primary p-3 rounded-2xl shadow-lg">
-                            <Globe className="text-white" size={32} />
-                        </div>
+                        <img src={logo} alt="GlobeTrotter Logo" className="h-14 w-14 object-contain" />
                         <h1 className="text-3xl font-bold text-gray-900">GlobeTrotter</h1>
                     </div>
 
